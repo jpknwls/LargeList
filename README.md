@@ -2,4 +2,4 @@
 Non-ScrollView approach to large lists in SwiftUIs
 
 
-![](large-list-demo.mov)
+https://github.com/jpknwls/large-list-demo.mov
