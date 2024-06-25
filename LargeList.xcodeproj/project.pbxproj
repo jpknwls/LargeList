@@ -34,6 +34,8 @@
 		52979B6D2C2A6E010097E098 /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B632C2A6E000097E098 /* GeometryUtils.swift */; };
 		52979B6E2C2A6E010097E098 /* Comparable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B642C2A6E000097E098 /* Comparable+Utils.swift */; };
 		52979B6F2C2A6E010097E098 /* SpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B652C2A6E010097E098 /* SpringTimingParameters.swift */; };
+		52979B732C2A7B090097E098 /* BinarySearchTree in Frameworks */ = {isa = PBXBuildFile; productRef = 52979B722C2A7B090097E098 /* BinarySearchTree */; };
+		52979B752C2A82F70097E098 /* FenwickTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B742C2A82F70097E098 /* FenwickTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		52979B632C2A6E000097E098 /* GeometryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryUtils.swift; sourceTree = "<group>"; };
 		52979B642C2A6E000097E098 /* Comparable+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Utils.swift"; sourceTree = "<group>"; };
 		52979B652C2A6E010097E098 /* SpringTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTimingParameters.swift; sourceTree = "<group>"; };
+		52979B742C2A82F70097E098 /* FenwickTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenwickTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52979B732C2A7B090097E098 /* BinarySearchTree in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 				52979B4E2C2A6D630097E098 /* Coordinator.swift */,
 				52979B5B2C2A6DDA0097E098 /* View */,
 				52979B5A2C2A6DC70097E098 /* Model */,
+				52979B742C2A82F70097E098 /* FenwickTree.swift */,
 				52979B702C2A6E050097E098 /* ScrollMechanics */,
 				52979B1C2C2A69960097E098 /* Assets.xcassets */,
 			);
@@ -219,6 +224,9 @@
 			dependencies = (
 			);
 			name = LargeList;
+			packageProductDependencies = (
+				52979B722C2A7B090097E098 /* BinarySearchTree */,
+			);
 			productName = LargeList;
 			productReference = 52979B152C2A69900097E098 /* LargeList.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +299,9 @@
 				Base,
 			);
 			mainGroup = 52979B0C2C2A69900097E098;
+			packageReferences = (
+				52979B712C2A7B090097E098 /* XCRemoteSwiftPackageReference "BinarySearchTree" */,
+			);
 			productRefGroup = 52979B162C2A69900097E098 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +346,7 @@
 				52979B512C2A6D820097E098 /* Item.swift in Sources */,
 				52979B692C2A6E010097E098 /* CGPoint+Utils.swift in Sources */,
 				52979B672C2A6E010097E098 /* DecelerationTimingParameters.swift in Sources */,
+				52979B752C2A82F70097E098 /* FenwickTree.swift in Sources */,
 				52979B682C2A6E010097E098 /* RubberBand.swift in Sources */,
 				52979B592C2A6DA80097E098 /* ScrollStateUpdate.swift in Sources */,
 				52979B4D2C2A6D550097E098 /* ListView.swift in Sources */,
@@ -517,7 +529,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LargeList/Preview Content\"";
 				DEVELOPMENT_TEAM = QMHCJZDLMT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -546,7 +557,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LargeList/Preview Content\"";
 				DEVELOPMENT_TEAM = QMHCJZDLMT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -684,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52979B712C2A7B090097E098 /* XCRemoteSwiftPackageReference "BinarySearchTree" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-tree/BinarySearchTree.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52979B722C2A7B090097E098 /* BinarySearchTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52979B712C2A7B090097E098 /* XCRemoteSwiftPackageReference "BinarySearchTree" */;
+			productName = BinarySearchTree;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52979B0D2C2A69900097E098 /* Project object */;
 }

@@ -8,17 +8,21 @@
 
 import SwiftUI
 import Combine
+import BinarySearchTree
 
 class Coordinator: NSObject, UIGestureRecognizerDelegate {
     init(count: Int) {
        items = Item.list(count: count)
-        locations = Array(0..<count).map { Location(index: $0,
-                                                    offset: 0,
-                                                    height: CGFloat.random(in: 40...300))}
+//        locations = Array(0..<count).map { Location(index: $0,
+//                                                    offset: 0,
+//                                                    height: CGFloat.random(in: 40...300))}
+        
+        locationTree = FenwickTree(count: count, neutralElement: 0, forward: +, reverse: -)
+        
     }
     
     private var items: [Item] = []
-    private var locations: [Location] = []
+//    private var locations: [Location] = []
     
     private var rangeLength = 40
     private var range: ClosedRange<Int> = 0...0
@@ -59,10 +63,12 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
     var maxIndex: Int { items.count - 1 }
     var halfRange: Int { rangeLength / 2 }
     var totalHeight: CGFloat {
-        guard let last = locations.last else { return 0 }
-        return last.offset + last.height
+        locationTree.maxValue()
+//        guard let last = locations.last else { return 0 }
+//        return last.offset + last.height
     }
     
+    var locationTree: FenwickTree<CGFloat>
     
     
     let scrollQueue = DispatchQueue(label: "org.LargeLists.ScrollQueue", qos: .userInteractive)
@@ -76,9 +82,16 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
 
     func setup() {
         range = 0...rangeLength
-        updateLocations() {
-            self.updateDisplayedItems(self._offset, force: true)
+        
+        for i in 0..<items.count {
+            let height = CGFloat.random(in: 40...300)
+            locationTree.update(index: i, with: height)
         }
+        
+//        updateLocations() {
+            self.updateDisplayedItems(self._offset, force: true)
+//        }
+        
     }
     
     
@@ -159,10 +172,14 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
   
     
     func updateCellHeight(at index: Int, height: CGFloat) {
-        guard index > 0 && index < items.count else { return }
-        locations[index].height = height
-        updateLocations() {
+        guard index >= 0 && index < items.count else { return }
+        locationsQueue.async { [weak self] in
+            guard let self else { return }
+            self.locationTree.update(index: index, with: height)
+            //        locations[index].height = height
+            //        updateLocations() {
             self.updateDisplayedItems(self._offset, force: true)
+            //        }
         }
     }
     
@@ -221,17 +238,35 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
             
             if force || self.range != newRange {
                 self.range = newRange
-                
-                let displayedItems = zip(items[newRange], locations[newRange])
-                let displayedLocations = Array(locations[newRange])
                 var counter = 0
-                var  cells =  Array.init(repeating: Cell.Default, count: newRange.count)
-                    for (item, location) in displayedItems {
+                var  cells =  Array.init(repeating: Cell.Default,
+                                         
+                                         count: newRange.count)
+                
+                for i in newRange {
+                    let item = items[i]
+                    let offset = i == 0 ? 0 : locationTree.accumulated(at: i - 1)
+                    let height = locationTree.value(at: i)
+                    let location = Location(index: i,
+                                            offset: offset,
+                                            height: height)
+                    
                     cells[counter] = .init(item: item,
-                                           location: location )
+                                           location: location)
+                    
                     counter += 1
                 }
                 
+//                let displayedItems = zip(items[newRange], locations[newRange])
+//                let displayedLocations = Array(locations[newRange])
+//                var counter = 0
+//                var  cells =  Array.init(repeating: Cell.Default, count: newRange.count)
+//                    for (item, location) in displayedItems {
+//                    cells[counter] = .init(item: item,
+//                                           location: location )
+//                    counter += 1
+                
+//                
                 DispatchQueue.main.async {
                     self.displayedCells.value = cells
                 }
@@ -242,25 +277,25 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
 
     }
 
-    private func updateLocations(completion: @escaping () -> () = { }) {
-        locationsQueue.async { [weak self] in
-            guard let self else { return }
-            var tempLocations = [Location]()
-            var counter = CGFloat.zero
-            var index = 0
-            for location in  locations {
-                tempLocations.append(.init(index: index,
-                                           offset: counter,
-                                           height: location.height))
-                                       
-                counter += location.height
-                index += 1
-            }
-            
-            locations = tempLocations
-            completion()
-        }
-    }
+//    private func updateLocations(completion: @escaping () -> () = { }) {
+//        locationsQueue.async { [weak self] in
+//            guard let self else { return }
+//            var tempLocations = [Location]()
+//            var counter = CGFloat.zero
+//            var index = 0
+//            for location in  locations {
+//                tempLocations.append(.init(index: index,
+//                                           offset: counter,
+//                                           height: location.height))
+//                                       
+//                counter += location.height
+//                index += 1
+//            }
+//            
+//            locations = tempLocations
+//            completion()
+//        }
+//    }
     
     private func bounce(withVelocity velocity: CGPoint) {
          let restOffset = contentOffset.clamped(to: contentOffsetBounds)
@@ -345,16 +380,19 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
     
     
     private func index(for offset: CGFloat) -> Int {
-        guard let index = locations.lastIndex(where: {
-            offset < -$0.offset
-        }) else {
-            return 0
-        }
+        let index = locationTree.index(for: -offset)
+//        guard let index = locations.lastIndex(where: {
+//            offset < -$0.offset
+//        }) else {
+//            return 0
+//        }
         
         return min(max(index, 0), items.count - 1)
     }
 
     
-   
+    func height(for index: Int) -> CGFloat {
+        0
+    }
 
 }

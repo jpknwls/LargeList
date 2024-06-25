@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "binarysearchtree",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-tree/BinarySearchTree.git",
+      "state" : {
+        "revision" : "87400e1ae20be2aae6ddef81f2cebbb3ce023585",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "binarytree",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-tree/BinaryTree.git",
+      "state" : {
+        "revision" : "a361dedee8bd65e282d6e9afce8160b51e470309",
+        "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "tree",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-tree/Tree.git",
+      "state" : {
+        "revision" : "848b252416b04bf2823bcf3dccd171be4a0a9a41",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
