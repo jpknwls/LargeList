@@ -8,12 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		52979B192C2A69900097E098 /* LargeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B182C2A69900097E098 /* LargeListApp.swift */; };
-		52979B1B2C2A69900097E098 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B1A2C2A69900097E098 /* ContentView.swift */; };
 		52979B1D2C2A69960097E098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52979B1C2C2A69960097E098 /* Assets.xcassets */; };
-		52979B202C2A69960097E098 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52979B1F2C2A69960097E098 /* Preview Assets.xcassets */; };
 		52979B2A2C2A69970097E098 /* LargeListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B292C2A69970097E098 /* LargeListTests.swift */; };
 		52979B342C2A69970097E098 /* LargeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B332C2A69970097E098 /* LargeListUITests.swift */; };
 		52979B362C2A69970097E098 /* LargeListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B352C2A69970097E098 /* LargeListUITestsLaunchTests.swift */; };
+		52979B432C2A6D130097E098 /* LargeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B422C2A6D130097E098 /* LargeList.swift */; };
+		52979B452C2A6D1F0097E098 /* ScrollGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B442C2A6D1F0097E098 /* ScrollGestures.swift */; };
+		52979B472C2A6D290097E098 /* ScrollBarGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B462C2A6D290097E098 /* ScrollBarGestures.swift */; };
+		52979B492C2A6D390097E098 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B482C2A6D390097E098 /* CellView.swift */; };
+		52979B4B2C2A6D440097E098 /* ScrollBarHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B4A2C2A6D440097E098 /* ScrollBarHandle.swift */; };
+		52979B4D2C2A6D550097E098 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B4C2C2A6D550097E098 /* ListView.swift */; };
+		52979B4F2C2A6D630097E098 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B4E2C2A6D630097E098 /* Coordinator.swift */; };
+		52979B512C2A6D820097E098 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B502C2A6D820097E098 /* Item.swift */; };
+		52979B532C2A6D8C0097E098 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B522C2A6D8C0097E098 /* Cell.swift */; };
+		52979B552C2A6D960097E098 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B542C2A6D960097E098 /* Location.swift */; };
+		52979B572C2A6DA00097E098 /* ScrollState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B562C2A6DA00097E098 /* ScrollState.swift */; };
+		52979B592C2A6DA80097E098 /* ScrollStateUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B582C2A6DA80097E098 /* ScrollStateUpdate.swift */; };
+		52979B662C2A6E010097E098 /* UISpringTimingParameters+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B5C2C2A6E000097E098 /* UISpringTimingParameters+Utils.swift */; };
+		52979B672C2A6E010097E098 /* DecelerationTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B5D2C2A6E000097E098 /* DecelerationTimingParameters.swift */; };
+		52979B682C2A6E010097E098 /* RubberBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B5E2C2A6E000097E098 /* RubberBand.swift */; };
+		52979B692C2A6E010097E098 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B5F2C2A6E000097E098 /* CGPoint+Utils.swift */; };
+		52979B6A2C2A6E010097E098 /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B602C2A6E000097E098 /* TimerAnimation.swift */; };
+		52979B6B2C2A6E010097E098 /* TimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B612C2A6E000097E098 /* TimingParameters.swift */; };
+		52979B6C2C2A6E010097E098 /* CASpringAnimation+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B622C2A6E000097E098 /* CASpringAnimation+Utils.swift */; };
+		52979B6D2C2A6E010097E098 /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B632C2A6E000097E098 /* GeometryUtils.swift */; };
+		52979B6E2C2A6E010097E098 /* Comparable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B642C2A6E000097E098 /* Comparable+Utils.swift */; };
+		52979B6F2C2A6E010097E098 /* SpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52979B652C2A6E010097E098 /* SpringTimingParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +56,34 @@
 /* Begin PBXFileReference section */
 		52979B152C2A69900097E098 /* LargeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LargeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52979B182C2A69900097E098 /* LargeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListApp.swift; sourceTree = "<group>"; };
-		52979B1A2C2A69900097E098 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52979B1C2C2A69960097E098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52979B1F2C2A69960097E098 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52979B252C2A69970097E098 /* LargeListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LargeListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52979B292C2A69970097E098 /* LargeListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListTests.swift; sourceTree = "<group>"; };
 		52979B2F2C2A69970097E098 /* LargeListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LargeListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52979B332C2A69970097E098 /* LargeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListUITests.swift; sourceTree = "<group>"; };
 		52979B352C2A69970097E098 /* LargeListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52979B422C2A6D130097E098 /* LargeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeList.swift; sourceTree = "<group>"; };
+		52979B442C2A6D1F0097E098 /* ScrollGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGestures.swift; sourceTree = "<group>"; };
+		52979B462C2A6D290097E098 /* ScrollBarGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarGestures.swift; sourceTree = "<group>"; };
+		52979B482C2A6D390097E098 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		52979B4A2C2A6D440097E098 /* ScrollBarHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarHandle.swift; sourceTree = "<group>"; };
+		52979B4C2C2A6D550097E098 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		52979B4E2C2A6D630097E098 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		52979B502C2A6D820097E098 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		52979B522C2A6D8C0097E098 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		52979B542C2A6D960097E098 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		52979B562C2A6DA00097E098 /* ScrollState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollState.swift; sourceTree = "<group>"; };
+		52979B582C2A6DA80097E098 /* ScrollStateUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStateUpdate.swift; sourceTree = "<group>"; };
+		52979B5C2C2A6E000097E098 /* UISpringTimingParameters+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Utils.swift"; sourceTree = "<group>"; };
+		52979B5D2C2A6E000097E098 /* DecelerationTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecelerationTimingParameters.swift; sourceTree = "<group>"; };
+		52979B5E2C2A6E000097E098 /* RubberBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubberBand.swift; sourceTree = "<group>"; };
+		52979B5F2C2A6E000097E098 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		52979B602C2A6E000097E098 /* TimerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
+		52979B612C2A6E000097E098 /* TimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingParameters.swift; sourceTree = "<group>"; };
+		52979B622C2A6E000097E098 /* CASpringAnimation+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CASpringAnimation+Utils.swift"; sourceTree = "<group>"; };
+		52979B632C2A6E000097E098 /* GeometryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryUtils.swift; sourceTree = "<group>"; };
+		52979B642C2A6E000097E098 /* Comparable+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Utils.swift"; sourceTree = "<group>"; };
+		52979B652C2A6E010097E098 /* SpringTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTimingParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,19 +135,13 @@
 			isa = PBXGroup;
 			children = (
 				52979B182C2A69900097E098 /* LargeListApp.swift */,
-				52979B1A2C2A69900097E098 /* ContentView.swift */,
+				52979B4E2C2A6D630097E098 /* Coordinator.swift */,
+				52979B5B2C2A6DDA0097E098 /* View */,
+				52979B5A2C2A6DC70097E098 /* Model */,
+				52979B702C2A6E050097E098 /* ScrollMechanics */,
 				52979B1C2C2A69960097E098 /* Assets.xcassets */,
-				52979B1E2C2A69960097E098 /* Preview Content */,
 			);
 			path = LargeList;
-			sourceTree = "<group>";
-		};
-		52979B1E2C2A69960097E098 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				52979B1F2C2A69960097E098 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		52979B282C2A69970097E098 /* LargeListTests */ = {
@@ -125,6 +159,48 @@
 				52979B352C2A69970097E098 /* LargeListUITestsLaunchTests.swift */,
 			);
 			path = LargeListUITests;
+			sourceTree = "<group>";
+		};
+		52979B5A2C2A6DC70097E098 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52979B502C2A6D820097E098 /* Item.swift */,
+				52979B522C2A6D8C0097E098 /* Cell.swift */,
+				52979B542C2A6D960097E098 /* Location.swift */,
+				52979B562C2A6DA00097E098 /* ScrollState.swift */,
+				52979B582C2A6DA80097E098 /* ScrollStateUpdate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52979B5B2C2A6DDA0097E098 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52979B422C2A6D130097E098 /* LargeList.swift */,
+				52979B442C2A6D1F0097E098 /* ScrollGestures.swift */,
+				52979B462C2A6D290097E098 /* ScrollBarGestures.swift */,
+				52979B482C2A6D390097E098 /* CellView.swift */,
+				52979B4A2C2A6D440097E098 /* ScrollBarHandle.swift */,
+				52979B4C2C2A6D550097E098 /* ListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52979B702C2A6E050097E098 /* ScrollMechanics */ = {
+			isa = PBXGroup;
+			children = (
+				52979B5C2C2A6E000097E098 /* UISpringTimingParameters+Utils.swift */,
+				52979B622C2A6E000097E098 /* CASpringAnimation+Utils.swift */,
+				52979B5F2C2A6E000097E098 /* CGPoint+Utils.swift */,
+				52979B642C2A6E000097E098 /* Comparable+Utils.swift */,
+				52979B5D2C2A6E000097E098 /* DecelerationTimingParameters.swift */,
+				52979B632C2A6E000097E098 /* GeometryUtils.swift */,
+				52979B5E2C2A6E000097E098 /* RubberBand.swift */,
+				52979B652C2A6E010097E098 /* SpringTimingParameters.swift */,
+				52979B602C2A6E000097E098 /* TimerAnimation.swift */,
+				52979B612C2A6E000097E098 /* TimingParameters.swift */,
+			);
+			path = ScrollMechanics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52979B202C2A69960097E098 /* Preview Assets.xcassets in Resources */,
 				52979B1D2C2A69960097E098 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +332,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52979B1B2C2A69900097E098 /* ContentView.swift in Sources */,
+				52979B512C2A6D820097E098 /* Item.swift in Sources */,
+				52979B692C2A6E010097E098 /* CGPoint+Utils.swift in Sources */,
+				52979B672C2A6E010097E098 /* DecelerationTimingParameters.swift in Sources */,
+				52979B682C2A6E010097E098 /* RubberBand.swift in Sources */,
+				52979B592C2A6DA80097E098 /* ScrollStateUpdate.swift in Sources */,
+				52979B4D2C2A6D550097E098 /* ListView.swift in Sources */,
+				52979B6A2C2A6E010097E098 /* TimerAnimation.swift in Sources */,
+				52979B6F2C2A6E010097E098 /* SpringTimingParameters.swift in Sources */,
+				52979B472C2A6D290097E098 /* ScrollBarGestures.swift in Sources */,
+				52979B4B2C2A6D440097E098 /* ScrollBarHandle.swift in Sources */,
+				52979B572C2A6DA00097E098 /* ScrollState.swift in Sources */,
+				52979B492C2A6D390097E098 /* CellView.swift in Sources */,
+				52979B452C2A6D1F0097E098 /* ScrollGestures.swift in Sources */,
+				52979B6B2C2A6E010097E098 /* TimingParameters.swift in Sources */,
 				52979B192C2A69900097E098 /* LargeListApp.swift in Sources */,
+				52979B532C2A6D8C0097E098 /* Cell.swift in Sources */,
+				52979B6D2C2A6E010097E098 /* GeometryUtils.swift in Sources */,
+				52979B432C2A6D130097E098 /* LargeList.swift in Sources */,
+				52979B6E2C2A6E010097E098 /* Comparable+Utils.swift in Sources */,
+				52979B552C2A6D960097E098 /* Location.swift in Sources */,
+				52979B662C2A6E010097E098 /* UISpringTimingParameters+Utils.swift in Sources */,
+				52979B4F2C2A6D630097E098 /* Coordinator.swift in Sources */,
+				52979B6C2C2A6E010097E098 /* CASpringAnimation+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
