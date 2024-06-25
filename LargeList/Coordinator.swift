@@ -96,7 +96,6 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
                 let position = max(min(location / height, 1), 0)
                 
                 let offset = (totalHeight - (frameHeight ?? 0)) * position
-//                    let newOffset = self.clampScrollEnd(offset:  -offset)
 
                 handleOffsetChange(-offset, animation: .easeInOut(duration: scrollBarAnimationDuration))
             }

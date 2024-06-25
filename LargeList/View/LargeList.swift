@@ -45,4 +45,3 @@ struct LargeList: View {
     }
     
 }
-import Foundation
