@@ -1,5 +1,5 @@
 # LargeList
-Non-ScrollView approach to large lists in SwiftUIs
+Non-ScrollView approach to large lists in SwiftUI
 
 
 
