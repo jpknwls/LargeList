@@ -2,4 +2,4 @@
 Non-ScrollView approach to large lists in SwiftUIs
 
 
-![](my_video.mov)
+![](large-list-demo.mov)
