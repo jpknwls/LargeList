@@ -11,7 +11,7 @@ import SwiftUI
 struct LargeListApp: App {
     var body: some Scene {
         WindowGroup {
-            LargeList(count: 10000)
+            LargeList(count: 1000000)
         }
     }
 }

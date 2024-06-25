@@ -3,7 +3,7 @@
 //  LargeList
 //
 //  Created by John Knowles on 6/24/24.
-//
+// CREDIT: https://gist.github.com/ielyamani/f586600cccb0845a73ae429e26f75120
 
 import Foundation
 
@@ -47,6 +47,8 @@ class FenwickTree<T: BinaryFloatingPoint>: CustomDebugStringConvertible {
         self.tree = Array(repeating: neutralElement, count: count + 1)
     }
     
+    // to do: add, remove
+    
     func update(index: Int, with newValue: T) {
         let oldValue = data[index];
         let delta = reverse(newValue, oldValue)
@@ -62,9 +64,9 @@ class FenwickTree<T: BinaryFloatingPoint>: CustomDebugStringConvertible {
         var sum = neutral
         var treeIndex = index + 1
         while 0 < treeIndex {
-            print(index, treeIndex)
             sum = forward(tree[treeIndex], sum)
             treeIndex -= treeIndex & -treeIndex
+//            print(treeIndex)
         }
         return sum
     }
@@ -80,6 +82,11 @@ class FenwickTree<T: BinaryFloatingPoint>: CustomDebugStringConvertible {
     func value(at index: Int) -> T {
         guard index >= 0 && index < count else { return neutral }
         return data[index]
+    }
+    
+    func values(in range: ClosedRange<Int>) -> [T] {
+        guard range.lowerBound >= 0 && range.upperBound < count else { return [] }
+        return Array(data[range])
     }
     
     func maxValue() -> T {
@@ -105,21 +112,7 @@ class FenwickTree<T: BinaryFloatingPoint>: CustomDebugStringConvertible {
             }
         
         return max(left, right)
-        
-        
-//        
-//        var treeIndex = count / 2
-//        while 0 < treeIndex &&  treeIndex <= count {
-//            if value > accumulated(at: index) {
-//                treeIndex += treeIndex & -treeIndex
-//            } else {
-//                treeIndex -= treeIndex & -treeIndex
-//            }
-//            
-//            print(value, treeIndex)
-//        }
-//        
-        return 0
+
     }
     
     var debugDescription: String {

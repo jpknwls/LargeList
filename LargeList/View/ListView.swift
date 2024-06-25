@@ -13,7 +13,7 @@ struct ListView: View {
     
     @State var displayedCells = [Cell]()
     @State var state = ScrollState()
-
+    
     var body: some View {
         ZStack(alignment: .topLeading) {
             Color.clear
@@ -26,7 +26,7 @@ struct ListView: View {
             .offset(y: state.offset)
         }
         .onReceive(coordinator.displayedCells, perform: { update in
-            displayedCells = update
+                displayedCells = update
         })
         .onReceive(coordinator.scrollState, perform: {  update in
             withAnimation(update.animation) {
